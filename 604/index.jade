@@ -4,7 +4,7 @@
 
 mixin panel(text)
   div.panel
-    p #{text}
+    small #{text}
 doctype html
 head
   title My Business Intelligence
@@ -24,18 +24,18 @@ body.antialiased.hide-extras
     h3 Dashboards
   .row
     each item in dashboards
-      .small-3.large-2.columns
+      .small-6.large-2.columns
         +panel(item)
   .row
     h3 KPIs
   .row
-    each item in kpis
-      .small-3.large-2.columns
-        +panel(item)
+    each item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
+      .small-6.large-2.columns
+        +panel('KPI ITEM #'+item)
   .row
     h3 Scorecards
   .row
-    each item in scorecards
-      .small-3.large-2.columns
-        +panel(item)
+    each item in [1,2,3,4]
+      .small-6.large-2.columns
+        +panel('SC ITEM #'+item)
   script(src='//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation.min.js')
