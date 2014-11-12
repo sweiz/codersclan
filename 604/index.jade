@@ -1,0 +1,41 @@
+- var dashboards =  [ "CLS - Funding", "EMS - Funding", "Funding :: Activity", "Funding :: Metrics", "Funding :: Pipeline", "PCS - Funding", "RMS - Funding", "TCS - Funding", "TPS - Funding", "UMS - Funding Activity / Pipeline", "WMS - Funding"]
+- var kpis = [ "Activity :: Funded" ]
+- var scorecards = []
+
+mixin panel(text)
+  div.panel
+    p #{text}
+doctype html
+head
+  title My Business Intelligence
+  link(rel='stylesheet', type='text/css', href='//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.min.css')
+body.antialiased.hide-extras
+  .row
+    h3 My Business Intelligence
+    hr
+  .row
+      .small-2.columns
+        label.left.inline Keyword Search
+      .small-10.columns
+        input(type='text',value='fund')
+  .row
+    hr
+  .row
+    h3 Dashboards
+  .row
+    each item in dashboards
+      .small-3.large-2.columns
+        +panel(item)
+  .row
+    h3 KPIs
+  .row
+    each item in kpis
+      .small-3.large-2.columns
+        +panel(item)
+  .row
+    h3 Scorecards
+  .row
+    each item in scorecards
+      .small-3.large-2.columns
+        +panel(item)
+  script(src='//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation.min.js')
